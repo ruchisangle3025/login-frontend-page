@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=5.0">
+
+    <style>
+        * {
+            margin: 11px;
+            padding: 5;
+            box-sizing: square-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Trebuchet MS', sans-serif;
+        }
+        
+        body {
+            background: whitesmoke;
+            color: black;
+        }
+        /* HEADER */
+        
+        header {
+            background: skyblue;
+            color: black;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            font-size: 18px;
+        }
+        /* SECTIONS */
+        
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: black;
+            font-size: 32px;
+        }
+        /* ABOUT */
+        
+        .about {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        /* SKILLS */
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 15px rgba(204, 133, 133, 0.1);
+            font-weight: italic;
+        }
+        /* PROJECTS */
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .project {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project h3 {
+            color: skyblue;
+            margin-bottom: 20px;
+        }
+        /* CONTACT */
+        
+        .contact {
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .contact a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: lightblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.5s;
+        }
+        
+        .contact a:hover {
+            background: black;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>
+            DR. ANIKET SANGLE
+        </h1>
+        <p><b>MBBS</b> | GENERAL SURGEON • PHYSICIAN • PROFESSOR</p>
+    </header>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About Me</h2>
+        <p class="about">
+            Hello! I am a dedicated and compassionate medical professional with a strong background in general surgery and internal medicine. With years of experience in the healthcare field, I have honed my skills in diagnosing and treating a wide range of medical
+            conditions. My commitment to patient care and continuous learning drives me to stay updated with the latest advancement s in medical science. I am passionate about providing high-quality healthcare services and making a positive impact on
+            the lives of my patients.
+        </p>
+    </section>
+    <section>
+        <h2>My proffession</h2>
+        <div class="proffession">
+            <ul>
+                <li>medicene</li>
+                <li>surgery</li>
+                <li>healthcare</li>
+                <li>patient care</li>
+                <li>famailer with patients</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h2>healthcare</h2>
+        <div class="doctors">
+            <div class="doctor">
+                <h3> doctors Portfolio Website</h3>
+                <p>a personal portfolio website for a doctor.</p>
+            </div>
+            <div classhealth="doctor">
+                <h3> doctors image map</h3>
+                <p>Healthcare clickable image map.</p>
+            </div>
+            <div>
+                <a href="https://ai.google/health/">visit goole health</a>
+            </div>
+            <!-- CONTACT -->
+            <section>
+                <h2>Contact Me</h2>
+                <div class="contact">
+                    <p>Email: aniketsangle@gmail.com</p>
+                    <p>Location: Mahrashtra</p>
+                    <a href="mailto:aniketsangle@email.com">Send Email</a>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+                <p>© 2026 Aniket sangle | All Rights Reserved</p>
+            </footer>
+
+</body>
+
+</html>

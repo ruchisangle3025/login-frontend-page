@@ -1,0 +1,151 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* BODY */
+
+body {
+    background: radial-gradient(circle at center, #020024, #000010, #000);
+    min-height: 100vh;
+    color: #fff;
+    padding: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 6px;
+}
+
+
+/* RADIO BUTTONS (HIDDEN) */
+
+input[type="radio"] {
+    display: none;
+}
+
+
+/* MENU CONTAINER */
+
+.menu {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* HOVER EFFECT */
+
+.menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+}
+
+
+/* PREVIEW (PLANET CIRCLE) */
+
+.preview {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 18px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+
+/* INFO */
+
+.info h2 {
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.info h3 {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+
+/* PLANET COLORS */
+
+.pluto .preview {
+    background: radial-gradient(circle, #d6cfc7, #8b857e);
+}
+
+.neptune .preview {
+    background: radial-gradient(circle, #4c6ef5, #1c3faa);
+}
+
+.uranus .preview {
+    background: radial-gradient(circle, #7ad1d2, #2f9e9e);
+}
+
+.saturn .preview {
+    background: radial-gradient(circle, #f4d35e, #c9a227);
+    position: relative;
+}
+
+
+/* SATURN RING */
+
+.saturn .preview::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+
+/* ACTIVE SELECTION */
+
+#pluto:checked+label,
+#neptune:checked+label,
+#uranus:checked+label,
+#saturn:checked+label {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+    .preview {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
