@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        .box1 {
+            height: 200px;
+            width: 400px;
+            background-color: blue;
+            animation-name: colorchange1;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes colorchange1 {
+            from {
+                background-color: blue;
+            }
+            to {
+                background-color: yellow;
+            }
+        }
+        
+        .box2 {
+            height: 200px;
+            width: 400px;
+            background-color: brown;
+            animation-name: colorchange2;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes colorchange2 {
+            from {
+                background-color: brown;
+            }
+            to {
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
+    <div class="box1 "></div>
+    <div class="box2"></div>
+</body>
+
+</html>

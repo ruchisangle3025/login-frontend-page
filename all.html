@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suvarna's Beauty Salon</title>
+    <style>
+         :root {
+            --primary: #d4af37;
+            /* Gold */
+            --secondary: #fff0f5;
+            /* Lavender Blush */
+            --dark: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: var(--dark);
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: var(--primary);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background-color: var(--secondary);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background-color: #b5952f;
+        }
+        
+        #message {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: green;
+        }
+        
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Suvarna's Beauty Salon</h1>
+        <p>Enhancing Your Natural Glow</p>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Book Your Appointment</h2>
+            <p>Select your desired service and preferred time. We look forward to pampering you!</p>
+        </div>
+
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="customerName">Full Name</label>
+                <input type="text" id="customerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" required>
+                    <option value="">-- Choose a Service --</option>
+                    <option value="Haircut & Styling">Haircut & Styling</option>
+                    <option value="Bridal Makeup">Bridal Makeup</option>
+                    <option value="Facial & Skincare">Facial & Skincare</option>
+                    <option value="Manicure & Pedicure">Manicure & Pedicure</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" required>
+            </div>
+
+            <button type="submit">Confirm Booking</button>
+            <div id="message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', async(e) => {
+            e.preventDefault(); // Prevent page reload
+            const messageDiv = document.getElementById('message');
+
+            // Gather form data
+            const bookingData = {
+                customerName: document.getElementById('customerName').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value
+            };
+
+            try {
+                // Send data to the backend
+                const response = await fetch('http://localhost:3000/api/bookings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bookingData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    messageDiv.innerHTML = `<span class="success">${result.message}</span>`;
+                    document.getElementById('bookingForm').reset(); // Clear form
+                } else {
+                    messageDiv.innerHTML = `<span class="error">${result.error}</span>`;
+                }
+            } catch (error) {
+                messageDiv.innerHTML = `<span class="error">Failed to connect to the server. Is it running?</span>`;
+            }
+        });
+    </script>
+</body>
+
+</html>
