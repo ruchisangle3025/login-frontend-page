@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniOps | Enterprise IDV, Workforce & Asset Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                900: "#0c4a6e",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex"
+  >
+    <aside
+      class="w-64 border-r border-slate-800 bg-slate-900/60 backdrop-blur-xl flex flex-col justify-between hidden md:flex"
+    >
+      <div>
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-800 gap-3"
+        >
+          <div
+            class="h-8 w-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center border border-sky-500/30"
+          >
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-base tracking-wide text-white"
+            >Omni<span class="text-sky-400">Ops</span> Core</span
+          >
+        </div>
+
+        <nav class="p-4 space-y-1.5 text-sm font-medium">
+          <div
+            class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-3 mb-2"
+          >
+            Core Modules
+          </div>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20"
+          >
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            Overview
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition"
+          >
+            <i data-lucide="file-check-2" class="w-4 h-4"></i>
+            IDV & Verification
+            <span
+              class="ml-auto text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20"
+              >3 Pending</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition"
+          >
+            <i data-lucide="users" class="w-4 h-4"></i>
+            Workforce Logistics
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition"
+          >
+            <i data-lucide="boxes" class="w-4 h-4"></i>
+            Asset Operations
+          </a>
+
+          <div
+            class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-3 pt-4 mb-2"
+          >
+            Governance & Security
+          </div>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition"
+          >
+            <i data-lucide="activity" class="w-4 h-4"></i>
+            Telemetry & Logs
+          </a>
+          <a
+            href="#"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition"
+          >
+            <i data-lucide="settings" class="w-4 h-4"></i>
+            System Config
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-4 border-t border-slate-800">
+        <div
+          class="bg-slate-800/40 rounded-lg p-3 border border-slate-700/50 flex items-center gap-3"
+        >
+          <div
+            class="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-400 to-indigo-600 flex items-center justify-center font-bold text-xs text-white"
+          >
+            JD
+          </div>
+          <div class="flex-1 truncate">
+            <div class="text-xs font-semibold text-slate-200 truncate">
+              Jane Doe
+            </div>
+            <div class="text-[11px] text-slate-500">SecOps Admin</div>
+          </div>
+          <i
+            data-lucide="log-out"
+            class="w-4 h-4 text-slate-500 hover:text-slate-300 cursor-pointer"
+          ></i>
+        </div>
+      </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-hidden">
+      <header
+        class="h-16 border-b border-slate-800 bg-slate-900/30 backdrop-blur-md flex items-center justify-between px-6 z-10"
+      >
+        <div class="flex items-center gap-4">
+          <h1 class="text-lg font-semibold text-white">
+            Operations Command Center
+          </h1>
+          <span
+            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+            Engines Nominal
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="relative w-64 hidden sm:block">
+            <i
+              data-lucide="search"
+              class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+            ></i>
+            <input
+              type="text"
+              placeholder="Search ID, Worker, Asset UUID..."
+              class="w-full bg-slate-900 border border-slate-700 text-xs rounded-lg pl-9 pr-3 py-2 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition"
+            />
+          </div>
+
+          <button
+            class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-800/60 border border-slate-700 relative"
+          >
+            <i data-lucide="bell" class="w-4 h-4"></i>
+            <span
+              class="absolute top-1 right-1 w-2 h-2 rounded-full bg-sky-500"
+            ></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="flex-1 overflow-y-auto p-6 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-xl relative overflow-hidden"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="text-xs text-slate-400 font-medium">
+                  Auto-IDV Pass Rate
+                </p>
+                <h3 class="text-2xl font-bold text-white mt-1">98.4%</h3>
+              </div>
+              <div
+                class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+              >
+                <i data-lucide="file-badge" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center text-xs text-slate-400 gap-1">
+              <span class="text-emerald-400 font-medium flex items-center"
+                ><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i
+                >+2.1%</span
+              >
+              vs last shift
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-xl relative overflow-hidden"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="text-xs text-slate-400 font-medium">
+                  Active Workforce
+                </p>
+                <h3 class="text-2xl font-bold text-white mt-1">1,429</h3>
+              </div>
+              <div
+                class="p-2 rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20"
+              >
+                <i data-lucide="user-check" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center text-xs text-slate-400 gap-1">
+              <span class="text-slate-300 font-medium">94%</span> scheduled
+              attendance
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-xl relative overflow-hidden"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="text-xs text-slate-400 font-medium">
+                  Asset Utilization
+                </p>
+                <h3 class="text-2xl font-bold text-white mt-1">87.1%</h3>
+              </div>
+              <div
+                class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+              >
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center text-xs text-slate-400 gap-1">
+              <span class="text-amber-400 font-medium">12 assets</span>
+              scheduled for maintenance
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-xl relative overflow-hidden"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="text-xs text-slate-400 font-medium">
+                  AI Extraction Conf.
+                </p>
+                <h3 class="text-2xl font-bold text-white mt-1">99.12%</h3>
+              </div>
+              <div
+                class="p-2 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20"
+              >
+                <i data-lucide="scan-face" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center text-xs text-slate-400 gap-1">
+              <span class="text-purple-400">Multi-Model OCR v4.2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div
+            class="lg:col-span-2 bg-slate-900/40 border border-slate-800 rounded-xl p-5 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800"
+              >
+                <div>
+                  <h2 class="text-base font-semibold text-white">
+                    Live Verification Stream
+                  </h2>
+                  <p class="text-xs text-slate-400">
+                    Real-time OCR extraction, biometric match & KYC analysis
+                  </p>
+                </div>
+                <button
+                  class="text-xs px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 transition flex items-center gap-1.5 border border-slate-700"
+                >
+                  <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
+                  Filter Stream
+                </button>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="text-slate-400 border-b border-slate-800/80">
+                      <th class="pb-3 font-medium">Subject / Entity</th>
+                      <th class="pb-3 font-medium">Document Type</th>
+                      <th class="pb-3 font-medium">AI Conf. / Match</th>
+                      <th class="pb-3 font-medium">Status</th>
+                      <th class="pb-3 font-medium text-right">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800/50 text-slate-300">
+                    <tr class="hover:bg-slate-800/30 transition">
+                      <td
+                        class="py-3 font-medium text-white flex items-center gap-2"
+                      >
+                        <span
+                          class="w-2 h-2 rounded-full bg-emerald-400"
+                        ></span>
+                        Alex Rivera
+                      </td>
+                      <td class="py-3">Passport (USA)</td>
+                      <td class="py-3">
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden"
+                          >
+                            <div class="bg-emerald-400 h-full w-[99%]"></div>
+                          </div>
+                          <span class="text-[11px] text-slate-400">99%</span>
+                        </div>
+                      </td>
+                      <td class="py-3">
+                        <span
+                          class="px-2 py-0.5 rounded text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                          >Verified</span
+                        >
+                      </td>
+                      <td class="py-3 text-right">
+                        <button class="text-sky-400 hover:text-sky-300">
+                          Inspect
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-slate-800/30 transition">
+                      <td
+                        class="py-3 font-medium text-white flex items-center gap-2"
+                      >
+                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                        TechnoForge Ltd (Asset Reg)
+                      </td>
+                      <td class="py-3">Tax Certification</td>
+                      <td class="py-3">
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden"
+                          >
+                            <div class="bg-amber-400 h-full w-[78%]"></div>
+                          </div>
+                          <span class="text-[11px] text-slate-400">78%</span>
+                        </div>
+                      </td>
+                      <td class="py-3">
+                        <span
+                          class="px-2 py-0.5 rounded text-[11px] bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                          >Manual Review</span
+                        >
+                      </td>
+                      <td class="py-3 text-right">
+                        <button
+                          class="text-sky-400 hover:text-sky-300 font-semibold"
+                        >
+                          Review
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-slate-800/30 transition">
+                      <td
+                        class="py-3 font-medium text-white flex items-center gap-2"
+                      >
+                        <span
+                          class="w-2 h-2 rounded-full bg-emerald-400"
+                        ></span>
+                        Elena Rostova
+                      </td>
+                      <td class="py-3">Commercial Driver License</td>
+                      <td class="py-3">
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden"
+                          >
+                            <div class="bg-emerald-400 h-full w-[96%]"></div>
+                          </div>
+                          <span class="text-[11px] text-slate-400">96%</span>
+                        </div>
+                      </td>
+                      <td class="py-3">
+                        <span
+                          class="px-2 py-0.5 rounded text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                          >Verified</span
+                        >
+                      </td>
+                      <td class="py-3 text-right">
+                        <button class="text-sky-400 hover:text-sky-300">
+                          Inspect
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-slate-800/30 transition">
+                      <td
+                        class="py-3 font-medium text-white flex items-center gap-2"
+                      >
+                        <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+                        Marcus Vance
+                      </td>
+                      <td class="py-3">National Identity Card</td>
+                      <td class="py-3">
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden"
+                          >
+                            <div class="bg-rose-400 h-full w-[42%]"></div>
+                          </div>
+                          <span class="text-[11px] text-slate-400">42%</span>
+                        </div>
+                      </td>
+                      <td class="py-3">
+                        <span
+                          class="px-2 py-0.5 rounded text-[11px] bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                          >Tamper Flag</span
+                        >
+                      </td>
+                      <td class="py-3 text-right">
+                        <button
+                          class="text-rose-400 hover:text-rose-300 font-semibold"
+                        >
+                          Audit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500"
+            >
+              <span>Showing 4 of 289 processed items today</span>
+              <a href="#" class="text-sky-400 hover:underline"
+                >View full verification log &rarr;</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/40 border border-slate-800 rounded-xl p-5 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4"
+              >
+                <h2 class="text-base font-semibold text-white">
+                  Ops & Telemetry
+                </h2>
+                <i
+                  data-lucide="radio"
+                  class="w-4 h-4 text-emerald-400 animate-pulse"
+                ></i>
+              </div>
+
+              <div class="space-y-4">
+                <div class="flex gap-3">
+                  <div
+                    class="w-7 h-7 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="truck" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <div class="text-xs">
+                    <p class="text-slate-200 font-medium">
+                      Asset Assigned: Heavy Hauler #882
+                    </p>
+                    <p class="text-slate-400 mt-0.5">
+                      Dispatched to Zone 4 • Operator: E. Rostova
+                    </p>
+                    <span class="text-[10px] text-slate-500 mt-1 block"
+                      >2 mins ago</span
+                    >
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div
+                    class="w-7 h-7 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <div class="text-xs">
+                    <p class="text-slate-200 font-medium">
+                      Workforce Check-In Batch Complete
+                    </p>
+                    <p class="text-slate-400 mt-0.5">
+                      Shift B (34 workers) authenticated via biometric scan.
+                    </p>
+                    <span class="text-[10px] text-slate-500 mt-1 block"
+                      >14 mins ago</span
+                    >
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div
+                    class="w-7 h-7 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <div class="text-xs">
+                    <p class="text-slate-200 font-medium">
+                      Asset Geofence Violation
+                    </p>
+                    <p class="text-slate-400 mt-0.5">
+                      Forklift #12 crossed boundary at Sector 9B.
+                    </p>
+                    <span
+                      class="text-[10px] text-rose-400 mt-1 block font-medium"
+                      >Action Required • 28 mins ago</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-slate-800">
+              <button
+                class="w-full bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition shadow-lg shadow-sky-600/20"
+              >
+                <i data-lucide="plus" class="w-4 h-4"></i> Deploy New Asset /
+                Worker
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
