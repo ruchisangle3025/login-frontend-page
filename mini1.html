@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Task Manager</title>
+
+    <!-- Tailwind CSS CDN for this beginner mini-project -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-5 shadow">
+        <h1 class="text-3xl font-bold text-center">
+            Student Task Manager
+        </h1>
+        <p class="text-center mt-1">
+            Manage your daily college tasks
+        </p>
+    </header>
+
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 py-8">
+
+        <!-- Add Task Card -->
+        <section class="bg-white rounded-xl shadow-md p-6">
+
+            <h2 class="text-xl font-semibold mb-4">
+                Add New Task
+            </h2>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter your task..."
+                    class="flex-1 border border-gray-300 rounded-lg px-4 py-3
+                           focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+
+                <button
+                    id="addTaskBtn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white
+                           px-6 py-3 rounded-lg font-semibold"
+                >
+                    Add Task
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="grid grid-cols-3 gap-3 mt-6">
+
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <p class="text-gray-500">Total</p>
+                <p id="totalTasks" class="text-2xl font-bold text-blue-600">
+                    0
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <p class="text-gray-500">Pending</p>
+                <p id="pendingTasks" class="text-2xl font-bold text-orange-500">
+                    0
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <p class="text-gray-500">Completed</p>
+                <p id="completedTasks" class="text-2xl font-bold text-green-600">
+                    0
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Filter Buttons -->
+        <section class="flex justify-center gap-2 mt-6">
+
+            <button
+                onclick="filterTasks('all')"
+                class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-lg"
+            >
+                All
+            </button>
+
+            <button
+                onclick="filterTasks('pending')"
+                class="filter-btn bg-gray-200 px-4 py-2 rounded-lg"
+            >
+                Pending
+            </button>
+
+            <button
+                onclick="filterTasks('completed')"
+                class="filter-btn bg-gray-200 px-4 py-2 rounded-lg"
+            >
+                Completed
+            </button>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section class="bg-white rounded-xl shadow-md mt-6 p-6">
+
+            <h2 class="text-xl font-semibold mb-4">
+                My Tasks
+            </h2>
+
+            <div id="taskList" class="space-y-3">
+                <!-- Tasks will appear here -->
+            </div>
+
+            <p
+                id="emptyMessage"
+                class="text-center text-gray-500 py-6"
+            >
+                No tasks available.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
